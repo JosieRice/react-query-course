@@ -16,6 +16,14 @@ const GitHubUser = ({ username }: Props) => {
 
   const data = userQuery.data;
 
+  if (userQuery.isLoading) {
+    return <div>...</div>;
+  }
+
+  if (userQuery.isError) {
+    return <div>{(userQuery as any).error.message}</div>;
+  }
+
   return <div>{JSON.stringify(data, null, 4)}</div>;
 };
 
