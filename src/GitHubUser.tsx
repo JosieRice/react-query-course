@@ -1,15 +1,14 @@
 import axios from "axios";
-import { StringifyOptions } from "querystring";
 import { useQuery } from "react-query";
 
-function fetchUser(username: StringifyOptions) {
+function fetchUser(username: string) {
   return axios
     .get(`https://api.github.com/users/${username}`)
     .then((res) => res);
 }
 
 interface Props {
-  username: any;
+  username: string;
 }
 
 const GitHubUser = ({ username }: Props) => {
