@@ -1,4 +1,3 @@
-import "./App.css";
 import GitHubUser from "./GitHubUser";
 
 const App = () => {
